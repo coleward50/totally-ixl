@@ -88,6 +88,7 @@ html {
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  background-image: url(https://www.dropbox.com/scl/fi/41w318onwjfz334wd1si5/1asyzovvrn8a1-1.png?rlkey=pg7jghc4vh2x29srl42b1luqf&raw=1);
 }
 
 nav {
@@ -103,11 +104,12 @@ nav {
 .navLink,
 .navBtn {
   text-decoration: none;
-  color: #000;
+  color: #FFF;
   font-family: "Lexend", sans-serif;
   font-weight: 900;
   cursor: pointer;
   transition: 200ms all;
+  
 }
 
 .navBtn {
@@ -122,23 +124,7 @@ nav {
 .navBtn:hover {
   transform: scale(1.15);
 }
-</style>
 
-    <script>
-      var iframesrc = document.getElementById("gameframe").src;
-iframesrc += "#".repeat(8000);
-document.getElementById("gameframe").src = iframesrc;
-
-var elem = document.getElementById("gameframe");
-function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) {
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) {
-    elem.msRequestFullscreen();
-  }
-}
 
     </script>
     
