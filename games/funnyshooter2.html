@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<link rel="icon" href="https://www.ixl.com/ixl-favicon.png" type="image/png" />
+
+<title>IXL | Math, Language Arts, Science, Social Studies, and Spanish</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+  
+    
+    <div class="navbar">
+  <nav>
+    <a href="../update.html" class="Version"><u>v1.0</u></a>
+    <a href="../index.html" class="navLink">Home</a>
+    <a href="../play.html" class="navLink">Games</a>
+    <a href="../proxies.html" class="navLink">Proxies</a>
+    <a href="https://ixl.com" class="navLink"><button class="navBtn">PANIC BUTTON</button></a>
+  </nav>
+</div>
+
+<script src="https://unpkg.com/feather-icons"></script>
+
+<iframe id="gameframe" src="../iframe/funnyshooter2.html" allow='fullscreen'></iframe>
+
+<button id="FullscreenBtn" onclick="openFullscreen();" role="button"><span class="material-symbols-outlined">
+fullscreen
+</span>
+</button>
+
+<button id="CloakTabBtn" onclick="AB_Cloak();" role="button"><span class="material-symbols-outlined">
+open_in_new
+</span>
+</button>
+
+
+    <style>
+  #gameframe {
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  width: 130vh;
+  height: 75vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+html {
+  height: 100%;
+  margin: 0;
+}
+
+#FullscreenBtn {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: none;
+  width: 18vh;
+  height: 10vh;
+  position: absolute;
+  top: 100%;
+  left: 57%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+
+ #FullscreenBtn:hover {
+   transform: scale(1.1) translate(-50%, -50%) translateX(5px);
+;
+ }
+   
+   
+   #CloakTabBtn {
+       background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: none;
+  width: 18vh;
+  height: 10vh;
+  position: absolute;
+  top: 100%;
+  left: 44%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+   }
+   
+   #CloakTabBtn:hover {
+   transform: scale(1.1) translate(-50%, -50%) translateX(5px);
+;
+ }
+   
+      
+
+}
+
+#gameframe:fullscreen {
+  border-radius: 0px;
+}
+
+.navbar {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  width: 100%;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background-image: url(https://www.dropbox.com/scl/fi/41w318onwjfz334wd1si5/1asyzovvrn8a1-1.png?rlkey=pg7jghc4vh2x29srl42b1luqf&raw=1);
+}
+
+nav {
+  position: absolute;
+  top: 114.5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  word-spacing: 20px;
+  font-family: "Lexend", sans-serif;
+  font-weight: 900;
+}
+
+.navLink,
+.navBtn {
+  text-decoration: none;
+  color: #FFF;
+  font-family: "Lexend", sans-serif;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 200ms all;
+  
+}
+
+.navBtn {
+  background: #393b44;
+  border: none;
+  border-radius: 5px;
+  width: 120px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.navBtn:hover {
+  transform: scale(1.15);
+}
+
+.Version {
+  text-decoration: none;
+  color: #fff;
+}
+    </style>
+
+    
+    
+    
+    
+    
+    
+    <script>
+
+var iframesrc = document.getElementById("gameframe").src;
+iframesrc += "#".repeat(8000);
+document.getElementById("gameframe").src = iframesrc;
+
+var elem = document.getElementById("gameframe");
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) {
+    /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) {
+    /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+
+
+
+function AB_Cloak() {
+const currentUrl = window.location.href;
+
+const w = window.open();
+var iframe = w.document.createElement("iframe")
+iframe.src = currentUrl
+iframe.style = "position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"
+w.document.body.appendChild(iframe)
+}
+
+             
+    </script>
+    
+
+<script>
+  feather.replace();
+</script>
+  </body>
+</html>
