@@ -1,4 +1,71 @@
-<script src="https://happygamer1450.github.io/Ruffle-Embedded/ruffle/ruffle.js"></script>
-<div class="swf"dir="ltr" style="text-align: left;" trbidi="on">
-        <embed height="480" pluginspage=" http://www.macromedia.com/go/getflashplayer" src="../swf/raftwars.swf" type="application/x-shockwave-flash" width="620"></embed>
+<link href="https://cdn.jsdelivr.net/gh/4id3n063/3kh0-Assets@5cb61b353cff0365c082c9309e82bb561c027201/Run%202/waflash/waflash-style.css" rel="stylesheet" type="text/css">
+<title>WAFLASH</title>
+<script>
+  var gameConfig = {
+    swfUrl: "../swf/raftwars.swf"
+  }
+</script>
+<div id="waflashContainer">
+  <canvas class="waflashCanvas" id="canvas" tabindex="1"></canvas>
+  <div id="waflashStatus" style="display: none;">Playing...</div>
+  <script>
+    var ua = navigator.userAgent.toLowerCase();
+    if ((navigator.appName == 'Netscape' && ua.indexOf('trident') != -1) || (ua.indexOf("msie") != -1)) {
+      var waf = document.getElementById('waflashStatus');
+      waf.style.display = 'block';
+      waf.innerText = '??? ?????(IE) ??? ??? ???? ???? !\n??, ???? ?? ????? ??????.';
+      gtag('event', 'connect_from_ie', {
+        'event_category': 'error',
+        'event_label': ua
+      });
+    }
+  </script>
+  <script crossorigin="anonymous" type="module">
+    let is_mobile = /Mobi/i.test(window.navigator.userAgent);
+    if (is_mobile) {
+      function scrollToSubject() {
+        try {
+          window.scrollTo({
+            top: 100,
+            left: 0,
+            behavior: 'smooth'
+          });
+        } catch (e) {}
+      }
+      scrollToSubject();
+      window.addEventListener("orientationchange", function() {
+        setTimeout(scrollToSubject, 100);
+      });
+    } else {
+      document.getElementById('canvas').focus();
+    }
+    document.getElementById('canvas').addEventListener("keydown", function(ev) {
+      ev.preventDefault();
+      ev.stopPropagation();
+    });
+    document.getElementById('canvas').addEventListener("click", function() {
+      document.getElementById('canvas').focus();
+    });
+    document.addEventListener("mousedown", (function() {
+      const canvasElement = document.getElementById('canvas');
+      let focused = false;
+      return function(ev) {
+        if (ev.target == canvasElement) {
+          if (!focused) {
+            canvasElement.focus();
+            focused = true;
+          }
+        } else {
+          if (focused) {
+            focused = false;
+          }
+        }
+        return true;
+      }
+    })());
+    import {
+      createWaflash
+    } from 'https://cdn.jsdelivr.net/gh/zhit73/wafedit@0f765928f5350d26e316fb1a4becdffc43bb7d2b/wasm/waflash-player.min.js';
+    createWaflash(gameConfig.swfUrl, window.wafOptions || {});
+  </script>
 </div>
